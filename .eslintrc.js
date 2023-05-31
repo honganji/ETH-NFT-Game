@@ -22,6 +22,12 @@ module.exports = {
     'node/no-missing-import': ['warn'],
     'no-lone-blocks': ['off'],
     'no-unused-vars': ['warn'],
+    'node/no-extraneous-require': [
+      'error',
+      {
+        allowModules: ['dotenv'],
+      },
+    ],
   },
   settings: {
     node: { tryExtensions: ['.js', '.json', '.node', '.ts', '.d.ts'] },
