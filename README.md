@@ -50,10 +50,9 @@ WavePortal address:  0x40aB7863b1b4987Df1e514cD99791d523AA128A4
 4. change the line 80 in `packages/client/src/App.js`.
 
 ```javascript
-const contractAddress = "YOUR_CONTRACT_ADDRESS";
+const contractAddress = 'YOUR_CONTRACT_ADDRESS';
 ```
 
 5. replace the json file in `packages/client/src/utils/Web3Mint.json` with the content of the json file in `packages/contract/artifacts/contracts/Web3Mint.sol/Web3Mint.json`.
-
 
 6. Finally, run `yarn client start` in terminal and see how it works!
