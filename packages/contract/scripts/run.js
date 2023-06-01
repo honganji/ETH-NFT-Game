@@ -2,7 +2,6 @@ const hre = require('hardhat');
 
 const main = async () => {
   const gameContractFactory = await hre.ethers.getContractFactory('MyEpicGame');
-
   const gameContract = await gameContractFactory.deploy(
     ['ZORO', 'NAMI', 'USOPP'], // キャラクターの名前
     [
@@ -17,15 +16,26 @@ const main = async () => {
     10000, // Bossのhp
     50, // Bossの攻撃力
   );
-  // ここでは、nftGame コントラクトが、
-  // ローカルのブロックチェーンにデプロイされるまで待つ処理を行っています。
-  const nftGame = await gameContract.deployed();
-
-  const txn = await gameContract.mintCharacterNFT(2);
+  await gameContract.deployed();
+  console.log('Contract deployed to:', gameContract.address);
+  // 3体のNFTキャラクターの中から、3番目のキャラクターを Mint しています。
+  let txn;
+  txn = await gameContract.mintCharacterNFT(2);
   await txn.wait();
 
-  console.log('Contract deployed to:', nftGame.address);
+  // 1回目の攻撃: attackBoss 関数を追加
+  txn = await gameContract.attackBoss();
+  await txn.wait();
+
+  // 2回目の攻撃: attackBoss 関数を追加
+  txn = await gameContract.attackBoss();
+  await txn.wait();
+
+  // NFTのURIの値を取得します。tokenURI は ERC721 から継承した関数です。
+  const returnedTokenUri = await gameContract.tokenURI(1);
+  console.log('Token URI:', returnedTokenUri);
 };
+
 const runMain = async () => {
   try {
     await main();
@@ -34,4 +44,5 @@ const runMain = async () => {
     throw new Error('Something bad happened!');
   }
 };
+
 runMain();
