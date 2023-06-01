@@ -18,7 +18,7 @@
 
 ## • Overview
 
-This project is made following [this instructions](https://app.unchain.tech/learn/ETH-NFT-Game/). Engineer cmmunity `UNCHAIN` is one of the best one to learn blockchain development.
+This project is made following [this instructions](https://app.unchain.tech/learn/ETH-NFT-Game/) made by engineer cmmunity `UNCHAIN`. This one is one of the best one to learn blockchain development.
 
 This is dapp that you can play simple game on Ethereum blockchain. You can mint character NFT and battle with a boss character.
 
