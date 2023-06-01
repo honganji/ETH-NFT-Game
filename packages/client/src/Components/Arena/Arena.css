@@ -239,3 +239,21 @@
   overflow: hidden;
   white-space: nowrap;
 }
+#toast.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 2s,
+    fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 4s,
+    fadeout 0.5s 4.5s;
+}
+
+.boss-container .loading-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25px;
+}
+.boss-container .loading-indicator p {
+  font-weight: bold;
+  font-size: 28px;
+}
