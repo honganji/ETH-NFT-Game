@@ -42,17 +42,16 @@ STAGING_ALCHEMY_KEY = <ALCHEMY_HTTP_KEY>
 3. run `yarn contract deploy` in terminal. The result would be like below.
 
 ```
-Deploying contracts with account:  0x04CD057E4bAD766361348F26E847B546cBBc7946
-Account balance:  272899657284590565
-WavePortal address:  0x40aB7863b1b4987Df1e514cD99791d523AA128A4
+Compiled 1 Solidity file successfully
+Contract deployed to: 0x8ca0fF95BdD8c618DEAa0eE78Ef3A80bbBdecB83
 ```
 
-4. change the line 80 in `packages/client/src/App.js`.
+4. change the line 1 in `packages/client/src/constants.js`.
 
 ```javascript
-const contractAddress = 'YOUR_CONTRACT_ADDRESS';
+const CONTRACT_ADDRESS = '<YOUR_CONTRACT_ADDRESS>';
 ```
 
-5. replace the json file in `packages/client/src/utils/Web3Mint.json` with the content of the json file in `packages/contract/artifacts/contracts/Web3Mint.sol/Web3Mint.json`.
+5. replace the json file in `packages/client/src/utils/Web3Mint.json` with the content of the json file in `packages/contract/artifacts/contracts/MyEpicGame.sol/MyEpicGame.json`.
 
 6. Finally, run `yarn client start` in terminal and see how it works!
